@@ -1,0 +1,10 @@
+# ESPHome artifacts/internals
+/.esphome/
+**/.pioenvs/
+**/.piolibdeps/
+**/lib/
+**/src/
+**/platformio.ini
+
+# Local private data
+/secrets.yaml
