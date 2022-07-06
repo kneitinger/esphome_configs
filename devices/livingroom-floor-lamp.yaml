@@ -3,4 +3,4 @@ substitutions:
   pretty_name: "Living Room Floor Lamp"
 
 packages:
-  light: !include ./outlets/sonoff_as_light.yaml
+  light: !include ../pkgs/outlets/sonoff_as_light.yaml
