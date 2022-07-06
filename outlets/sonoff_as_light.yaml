@@ -1,0 +1,58 @@
+<<: !include ../common/base.yaml
+
+# Basic Config
+esphome:
+  name: ${raw_name}
+  platform: ESP8266
+  board: esp01_1m
+
+
+logger:
+  baud_rate: 0 # (UART logging interferes with cse7766)
+
+# Device Specific Config
+
+uart:
+  rx_pin: RX
+  baud_rate: 4800
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "${pretty_name} Button"
+    on_press:
+      - light.toggle: light_id
+  - platform: status
+    name: "${pretty_name} Status"
+
+sensor:
+  - platform: wifi_signal
+    name: "${pretty_name} WiFi Signal"
+    update_interval: 60s
+  - platform: cse7766
+    current:
+      name: "${pretty_name} Current"
+      accuracy_decimals: 1
+    voltage:
+      name: "${pretty_name} Voltage"
+      accuracy_decimals: 1
+    power:
+      name: "${pretty_name} Power"
+      accuracy_decimals: 1
+
+light:
+  - platform: binary
+    name: "${pretty_name}"
+    output: relay
+    id: light_id
+
+output:
+  - platform: gpio
+    pin: GPIO12
+    id: relay
+
+status_led:
+  pin: GPIO13
