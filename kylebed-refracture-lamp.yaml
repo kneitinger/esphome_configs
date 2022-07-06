@@ -1,0 +1,6 @@
+substitutions:
+  raw_name: "kylebed-refracture-lamp"
+  pretty_name: "Kyle Bedroom Refracture Lamp"
+
+packages:
+  light: !include ./outlets/sonoff_as_light.yaml
