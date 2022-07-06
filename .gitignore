@@ -7,4 +7,4 @@
 **/platformio.ini
 
 # Local private data
-/secrets.yaml
+secrets.yaml
