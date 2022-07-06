@@ -1,0 +1,6 @@
+substitutions:
+  raw_name: "kyleoffice-floor-lamp"
+  pretty_name: "Kyle Office Floor Lamp"
+
+packages:
+  light: !include ./outlets/sonoff_as_light.yaml
