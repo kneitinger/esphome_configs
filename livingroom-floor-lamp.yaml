@@ -1,0 +1,6 @@
+substitutions:
+  raw_name: "livingroom-floor-lamp"
+  pretty_name: "Living Room Floor Lamp"
+
+packages:
+  light: !include ./outlets/sonoff_as_light.yaml
